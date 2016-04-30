@@ -1,5 +1,5 @@
 class LibrariesController < ApplicationController
-	before_action :set_project, only: [:show, :edit, :update, :destroy]
+	before_action :set_library, only: [:show, :edit, :update, :destroy]
 
  	def index
     	@libraries = Library.all
@@ -36,12 +36,12 @@ class LibrariesController < ApplicationController
   	def destroy
     	@library.destroy
 
-    	redirect_to library_path
+    	redirect_to libraries_path
   	end
 
   	private
 
-    	def set_project
+      def set_library
      	 @library = Library.find(params[:id])
     	end
 
