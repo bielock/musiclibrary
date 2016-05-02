@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Listing Tracks</h1>
+
 <table>
   <thead>
     <tr>
@@ -13,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @album_tracks.each do |track| %>
+    <% @tracks.order("album_id").each do |track| %>
       <tr>
         <td><%= link_to track.t_name, track_path(track) %></td>
         <td><%= track.album.artist.name %></td>
@@ -26,6 +28,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add Track', new_track_path(@album) %> |
-<%= link_to 'Edit Album', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+
+<br>
+
+<%= link_to 'New Track', new_track_path %>

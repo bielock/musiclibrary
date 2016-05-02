@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+      @album_tracks = Track.where(:album_id => @album)
   end
 
   # GET /albums/new
